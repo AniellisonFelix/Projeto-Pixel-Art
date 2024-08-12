@@ -166,7 +166,7 @@ const coresAleatorias = () => {
 botao2.addEventListener('click', coresAleatorias);
 
 const botao3 = document.createElement('button');
-botao3.innerText = 'VQV';
+botao3.innerText = 'Aplicar tamanho';
 body.insertBefore(botao3, terceiroFilho);
 botao3.id = 'generate-board';
 const idbotao3 = document.getElementById('generate-board');

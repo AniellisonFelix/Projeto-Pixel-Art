@@ -86,8 +86,8 @@ h2 {
 	border-radius:50% 10% 50% 10%;
 	background-color: blue;
 	color: #fff;
-	margin-left: 40.5%;
-	width: 250px;
+	/* margin-left: 40.5%; */
+	/* width: 250px; */
 	font-weight: 700;
   }
 
@@ -96,8 +96,8 @@ h2 {
 	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
 	border-radius:  5px;
 	background-color: yellow;
-	margin-left: 40.5%;
-	width: 242px;
+	/* margin-left: 40.5%;
+	width: 242px; */
 	font-weight: 700;
   }
 
@@ -106,16 +106,16 @@ h2 {
 	border-radius: 50% 10% 50% 10%;
 	background-color: rgb(255, 0, 0);
 	color: #fff;
-	margin-left: 40.5%;
-	width: 250px;
+	/* margin-left: 40.5%;
+	width: 250px; */
 	font-weight: 700;
   }
 
   button#generate-board {
 	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
 	border-radius: 50% 10% 50% 10%;
-	margin-left: 40.5%;
-	width: 250px;
+	/* margin-left: 40.5%;
+	width: 250px; */
 	background-color: #000;
 	color: #fff;
 	font-weight: 700;
