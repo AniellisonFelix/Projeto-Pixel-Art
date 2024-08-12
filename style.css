@@ -1,0 +1,89 @@
+#color-palette {
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 25px;
+}
+
+.color {
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
+	border-radius: 20% 20% 20% 20%/ 20% 20% 20% 20%;
+	margin: 10px;
+	border: 1px solid black;
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+  }
+
+#pixel-board {
+  border-color: 1px black;
+  border-style: solid;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pixel {
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
+	border-radius: 20% 20% 20% 20%/ 20% 20% 20% 20%;
+}
+
+body {
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+}
+
+body > :not(:first-child) {
+  /* Estilos para os elementos que não são o primeiro filho */
+  flex: 1; /* Faz com que os elementos ocupem o espaço disponível igualmente */
+}
+
+h1 {
+  background-image: radial-gradient(#0c74c4, #25d6e6);
+  color: white;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
+  border-radius: 10px;
+  height: 150px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Pixelify Sans';
+  font-size: 40px;
+  text-shadow: 1px 2px 6px black;
+}
+
+#clear-board {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
+	border-radius: 50% 10% 50% 10%/ 10% 50% 10% 50%;
+  background-color: #62ecdf;
+}
+
+#generate-board {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
+	border-radius: 50% 10% 50% 10%/ 10% 50% 10% 50%;
+  background-color: #e91616;
+  color: #ffffff;
+}
+
+#button-random-color {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
+	border-radius: 50% 10% 50% 10%/ 10% 50% 10% 50%;
+  background-color: #285b15;
+  color: #ffffff;
+}
+
+#board-size {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
+	border-radius: 20% 20% 20% 20%/ 20% 20% 20% 20%;
+  background-color: #eae23f;
+  text-align: center
+}
