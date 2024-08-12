@@ -1,89 +1,136 @@
-#color-palette {
-  display: flex;
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Roboto:wght@400;500;700&display=swap');
+
+
+body {
+	display: flex;
+	flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+	background-color: lightgray;
+	box-sizing: border-box;
+  }
+
+  body > :not(:first-child) {
+	flex: 1;
+  }
+
+h1 {
+	background-image: radial-gradient(#0097ff, #0c74c4);
+	color: white;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
+	border-radius: 10px;
+	height: 130px;
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 25px;
+	font-family: 'Pixelify Sans';
+	font-size: 40px;
+	text-shadow: 1px 2px 6px black;
+	margin-top: 10px;
 }
 
-.color {
+
+h2 {
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family:  'Pixelify Sans';
+	font-size: 30px;
+	background: linear-gradient(to right, rgba(0, 168, 253), #fff 35%, #e00a95, #fff, rgb(3, 248, 3), blue, #fff, red, #fff,yellow,#fff, black,#fff, gray, #fff,blue,#fff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 5s linear infinite;
+
+}
+
+
+#color-palette {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+  .color {
 	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
-	border-radius: 20% 20% 20% 20%/ 20% 20% 20% 20%;
+	border-radius: 50% 10% 50% 10%/ 10% 50% 10% 50%;
 	margin: 10px;
 	border: 1px solid black;
 	display: inline-block;
 	width: 60px;
 	height: 60px;
+
   }
 
-#pixel-board {
-  border-color: 1px black;
-  border-style: solid;
-  margin-top: 2%;
-  margin-left: auto;
-  margin-right: auto;
-}
+  #pixel-board {
+	margin-top: 30px;
+	border-color: 1px solid black;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 20px;
+  }
 
-.pixel {
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
-	border-radius: 20% 20% 20% 20%/ 20% 20% 20% 20%;
-}
+  .pixel {
+	border: 1px solid black;
+	width: 40px;
+	height: 40px;
+	background-color: white;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
+  }
+  
+  button#clear-board {
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
+	border-radius:50% 10% 50% 10%;
+	background-color: blue;
+	color: #fff;
+	margin-left: 40.5%;
+	width: 250px;
+	font-weight: 700;
+  }
 
-body {
-  background-color: antiquewhite;
-  display: flex;
-  flex-direction: column;
-}
+  input#board-size {
+	text-align: center;
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
+	border-radius:  5px;
+	background-color: yellow;
+	margin-left: 40.5%;
+	width: 242px;
+	font-weight: 700;
+  }
 
-body > :not(:first-child) {
-  /* Estilos para os elementos que não são o primeiro filho */
-  flex: 1; /* Faz com que os elementos ocupem o espaço disponível igualmente */
-}
+  button#button-random-color {
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
+	border-radius: 50% 10% 50% 10%;
+	background-color: rgb(255, 0, 0);
+	color: #fff;
+	margin-left: 40.5%;
+	width: 250px;
+	font-weight: 700;
+  }
 
-h1 {
-  background-image: radial-gradient(#0c74c4, #25d6e6);
-  color: white;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
-  border-radius: 10px;
-  height: 150px;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Pixelify Sans';
-  font-size: 40px;
-  text-shadow: 1px 2px 6px black;
-}
+  button#generate-board {
+	box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
+	border-radius: 50% 10% 50% 10%;
+	margin-left: 40.5%;
+	width: 250px;
+	background-color: #000;
+	color: #fff;
+	font-weight: 700;
+  }
 
-#clear-board {
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
-	border-radius: 50% 10% 50% 10%/ 10% 50% 10% 50%;
-  background-color: #62ecdf;
-}
+  @keyframes gradient {
+	0% {
+		background-position: 0% 75%;
+	}
 
-#generate-board {
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
-	border-radius: 50% 10% 50% 10%/ 10% 50% 10% 50%;
-  background-color: #e91616;
-  color: #ffffff;
-}
+	50% {
+		background-position: 100% 50%;
+	}
 
-#button-random-color {
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
-	border-radius: 50% 10% 50% 10%/ 10% 50% 10% 50%;
-  background-color: #285b15;
-  color: #ffffff;
-}
-
-#board-size {
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.534);
-	border-radius: 20% 20% 20% 20%/ 20% 20% 20% 20%;
-  background-color: #eae23f;
-  text-align: center
+	100% {
+		background-position: 0% 70%;
+	}
 }

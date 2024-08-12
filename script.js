@@ -1,6 +1,6 @@
-// CRIA TITULO
 document.getElementById('title').innerText = 'Paleta de Cores';
-// FUNÇÃO DE CAPTURA DE CLASS E ID
+document.getElementById('extra').innerText = 'Pixels Art';
+
 const pegaelementos = (idClass) => {
   const elements = document.querySelectorAll(idClass);
   if (elements.length === 0) return;
@@ -8,12 +8,12 @@ const pegaelementos = (idClass) => {
   const element = document.querySelector(idClass);
   if (element[0].id) return element;
 };
-// CAPTURAS
+
 const div = document.createElement('div');
 const body = document.querySelector('body');
 const primeiroFilho = body.firstElementChild;
 const segundoFilho = primeiroFilho.nextElementSibling;
-// CRIA PALETA DE CORES
+
 div.id = 'color-palette';
 primeiroFilho.after(div);
 const elementoDiv = '<div></div>';
@@ -24,11 +24,10 @@ for (let index = 0; index < divsFilhas.length; index += 1) {
   divFilha.classList.add('color');
 }
 const colorClass = pegaelementos('.color');
-colorClass[0].style.backgroundColor = 'blue';
-colorClass[1].style.backgroundColor = 'orange';
-colorClass[2].style.backgroundColor = 'red';
-colorClass[3].style.backgroundColor = 'green';
-// ADICIONA CLASSE SELECTED
+colorClass[0].style.backgroundColor = 'black';
+colorClass[1].style.backgroundColor = 'red';
+colorClass[2].style.backgroundColor = 'yellow';
+colorClass[3].style.backgroundColor = 'blue';
 const colorSelect = (event) => {
   for (let index = 0; index < colorClass.length; index += 1) {
     if (colorClass[index].classList.contains('selected')) {
@@ -38,7 +37,6 @@ const colorSelect = (event) => {
   }
   event.target.classList.add('selected');
 };
-// CRIA BOTÃO LIMPAR
 const botao = document.createElement('button');
 botao.innerText = 'Limpar';
 botao.id = 'clear-board';
@@ -52,20 +50,19 @@ const limpaQuadro = () => {
 };
 const idBotao = document.getElementById('clear-board');
 idBotao.addEventListener('click', limpaQuadro);
-// CRIA IMPUT
+
 const input = document.createElement('input');
 input.id = 'board-size';
-input.placeholder = "DIGITE O TAMANHO DESEJADO AQUI"
 body.insertBefore(input, terceiroFilho);
 const idInput = document.getElementById('board-size');
 idInput.type = 'number';
 idInput.min = '1';
-// SALVA TAMANHO DO QUADRO
+idInput.placeholder = 'Tamanho dos quadrados aqui.';
 const salvaTamanho = () => {
   const valorInput = idInput.value;
   localStorage.setItem('boardSize', valorInput);
 };
-// SALVANDO QUADRO NO LOCALSTORAGE
+
 const salvaLocalStorage = () => {
   const pixelClass = document.querySelectorAll('.pixel');
   let todosElementos = '';
@@ -74,7 +71,7 @@ const salvaLocalStorage = () => {
   }
   localStorage.setItem('pixelBoard', todosElementos);
 };
-// PINTA QUADRO
+
 const pixelSelect = (event) => {
   for (let index = 0; index < colorClass.length; index += 1) {
     if (colorClass[index].classList.contains('selected')) {
@@ -85,7 +82,7 @@ const pixelSelect = (event) => {
   }
   salvaLocalStorage();
 };
-// COLOCA CLIK NOS PIXELS
+
 const clickOnPixels = () => {
   const pixelClass = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixelClass.length; index += 1) {
@@ -94,7 +91,7 @@ const clickOnPixels = () => {
   }
 };
 clickOnPixels();
-// ADICIONA CLASSE PIXEL AO QUADRO
+
 const idQuadroPixel = 'pixel-board';
 const addclassPixel = () => {
   const idDiv2 = document.getElementById(idQuadroPixel);
@@ -104,7 +101,7 @@ const addclassPixel = () => {
     divFilha.classList.add('pixel');
   }
 };
-// CARREGA TAMANHO DO QUADRO
+
 const fitContent = 'fit-content';
 const recuperaTamanho = () => {
   if (localStorage.getItem('boardSize')) {
@@ -125,17 +122,15 @@ const recuperaTamanho = () => {
   }
 };
 recuperaTamanho();
-// CARREGA QUADRO SALVO
 const recuperaQuadroPintado = () => {
   if (localStorage.getItem('pixelBoard')) {
     const pixelBoard = localStorage.getItem('pixelBoard');
     const idPixelBord = document.querySelector('#pixel-board');
     idPixelBord.innerHTML = pixelBoard;
   }
-  clickOnPixels()
 };
 recuperaQuadroPintado();
-// CRIA QUADRO DE PIXELS
+
 if (localStorage.getItem('boardSize') === '' || localStorage.getItem('pixelBoard') === null) {
   const div2 = document.createElement('div');
   div2.id = idQuadroPixel;
@@ -149,18 +144,12 @@ if (localStorage.getItem('boardSize') === '' || localStorage.getItem('pixelBoard
   addclassPixel();
   clickOnPixels();
 }
-// SELECIONA COR NA PALETA
+
 for (let index = 0; index < colorClass.length; index += 1) {
   const element = colorClass[index];
   element.addEventListener('click', colorSelect);
 }
-// CRIA BOTÃO VQV
-const botao3 = document.createElement('button');
-botao3.innerText = 'Tamanho-Do-Quadro';
-body.insertBefore(botao3, terceiroFilho);
-botao3.id = 'generate-board';
-const idbotao3 = document.getElementById('generate-board');
-// CRIA BOTÃO CORES ALEATÓRIAS
+
 const botao2 = document.createElement('button');
 botao2.innerText = 'Cores aleatórias';
 botao2.id = 'button-random-color';
@@ -175,7 +164,13 @@ const coresAleatorias = () => {
   }
 };
 botao2.addEventListener('click', coresAleatorias);
-// LIMITE DE DIMENSAO DO QUADRO
+
+const botao3 = document.createElement('button');
+botao3.innerText = 'VQV';
+body.insertBefore(botao3, terceiroFilho);
+botao3.id = 'generate-board';
+const idbotao3 = document.getElementById('generate-board');
+
 const limiteQuadro = () => {
   if (idInput.value < 5 && idInput.value !== '') {
     idInput.value = '5';
@@ -184,7 +179,7 @@ const limiteQuadro = () => {
     idInput.value = '50';
   }
 };
-// REDIMENSIONA O QUADRO
+
 const mudaTamanho = () => {
   const idDiv2 = document.getElementById(idQuadroPixel);
   const valorInput = idInput.value;
